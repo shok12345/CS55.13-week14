@@ -1,30 +1,39 @@
 import Layout from '../components/layout';
 import Link from 'next/link';
 import { getSortedSnacksData } from '../lib/snacks';
+import { getSortedDrinksData } from '../lib/drinks';
+
+
 
 export async function getStaticProps() {
-  const allData = await getSortedSnacksData();
-  return { props: { allData } };
+  const snacks = await getSortedSnacksData();
+  const drinks = await getSortedDrinksData();
+  return {
+    props: { snacks,drinks },
+    revalidate: 20
+  };
 }
 
-export default function Home({ allData }) {
+export default function Home({ snacks, drinks }) {
   return (
     <Layout home>
       <h1>All Snacks</h1>
-
-      <div className="list-group">
-        {allData.map(({ id, name }) => (
-          <Link
-            key={id}
-            href={`/posts/${id}`}
-            className="list-group-item"
-            style={{ display: 'block', marginBottom: '8px' }}
-          >
-            {name}
-          </Link>
+      <ul>
+        {snacks.map(({ id, name }) => (
+          <li key={id}>
+            <Link href={`/snacks/${id}`}>{name}</Link>
+          </li>
         ))}
-      </div>
+      </ul>
 
+      <h1>All Drinks</h1>
+      <ul>
+        {drinks.map(({ id, name }) => (
+          <li key={id}>
+            <Link href={`/drinks/${id}`}>{name}</Link>
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
 }
