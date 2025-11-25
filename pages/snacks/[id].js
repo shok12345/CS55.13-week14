@@ -9,7 +9,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const postData = await getSnackData(params.id);
-  return { props: { postData } };
+
+  return { 
+    props: { postData },
+    revalidate: 60 
+  };
 }
 
 export default function Post({ postData }) {
