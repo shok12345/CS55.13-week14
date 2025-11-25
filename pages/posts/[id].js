@@ -1,14 +1,14 @@
 import Layout from '../../components/layout';
 import Head from 'next/head';
-import { getAllPostIds, getPostData } from '../../lib/snacks';
+import { getAllSnackIds, getSnackData } from '../../lib/snacks';
 
 export async function getStaticPaths() {
-  const paths = await getAllPostIds();
+  const paths = await getAllSnackIds();
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+  const postData = await getSnackData(params.id);
   return { props: { postData } };
 }
 

@@ -1,9 +1,9 @@
 import Layout from '../components/layout';
 import Link from 'next/link';
-import { getSortedPostsData } from '../lib/snacks';
+import { getSortedSnacksData } from '../lib/snacks';
 
 export async function getStaticProps() {
-  const allData = await getSortedPostsData();
+  const allData = await getSortedSnacksData();
   return { props: { allData } };
 }
 
