@@ -20,6 +20,14 @@ export default function Home({ snacks, drinks, movies }) {
   return (
     
     <Layout home>
+      <h1>All Movies</h1>
+      <ul>
+        {movies.map(({ id, name }) => (
+          <li key={id}>
+            <Link href={`/movies/${id}`}>{name}</Link>
+          </li>
+        ))}
+      </ul>
         <h1>All Snacks</h1>
         <ul>
           {snacks.map(({ id, name }) => (
@@ -33,15 +41,6 @@ export default function Home({ snacks, drinks, movies }) {
         {drinks.map(({ id, name }) => (
           <li key={id}>
             <Link href={`/drinks/${id}`}>{name}</Link>
-          </li>
-        ))}
-      </ul>
-
-      <h1>All Movies</h1>
-      <ul>
-        {movies.map(({ id, name }) => (
-          <li key={id}>
-            <Link href={`/movies/${id}`}>{name}</Link>
           </li>
         ))}
       </ul>
