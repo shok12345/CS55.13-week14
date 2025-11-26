@@ -28,6 +28,8 @@ export default function Post({ postData }) {
 
         <p><strong>Drink Name:</strong> {postData.drinkName}</p>
         <p><strong>Description:</strong> {postData.description}</p>
+        <p><strong>Price:</strong> {postData.price}</p>
+        <p><strong>Sugar content:</strong> {postData.sugar}</p>
 
         <small>Date: {postData.date}</small>
 

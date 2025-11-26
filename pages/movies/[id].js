@@ -28,6 +28,8 @@ export default function Post({ postData }) {
 
         <p><strong>Movie Name:</strong> {postData.movieName}</p>
         <p><strong>Description:</strong> {postData.description}</p>
+        <p><strong>Rating:</strong> {postData.rating}</p>
+        <p><strong>Release Year:</strong> {postData.release}</p>
 
         <small>Date: {postData.date}</small>
 

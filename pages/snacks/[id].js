@@ -28,6 +28,8 @@ export default function Post({ postData }) {
 
         <p><strong>Snack Name:</strong> {postData.snackName}</p>
         <p><strong>Description:</strong> {postData.description}</p>
+        <p><strong>Price:</strong> {postData.price}</p>
+        <p><strong>Location:</strong> {postData.location}</p>
 
         <small>Date: {postData.date}</small>
 

@@ -18,16 +18,16 @@ export async function getStaticProps() {
 
 export default function Home({ snacks, drinks, movies }) {
   return (
+    
     <Layout home>
-      <h1>All Snacks</h1>
-      <ul>
-        {snacks.map(({ id, name }) => (
-          <li key={id}>
-            <Link href={`/snacks/${id}`}>{name}</Link>
-          </li>
-        ))}
-      </ul>
-
+        <h1>All Snacks</h1>
+        <ul>
+          {snacks.map(({ id, name }) => (
+            <li key={id}>
+              <Link href={`/snacks/${id}`}>{name}</Link>
+            </li>
+          ))}
+        </ul>
       <h1>All Drinks</h1>
       <ul>
         {drinks.map(({ id, name }) => (
@@ -46,6 +46,7 @@ export default function Home({ snacks, drinks, movies }) {
         ))}
       </ul>
     </Layout>
+   
   );
 }
 
